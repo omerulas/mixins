@@ -1,7 +1,7 @@
 import json
 from django.forms import ModelForm
 from django.contrib.auth import login, logout
-from main.mixins.base import BaseOperationMixins
+from mixins.base import BaseOperationMixins
 
 class AuthMixin(BaseOperationMixins):
     
@@ -24,7 +24,6 @@ class AuthMixin(BaseOperationMixins):
                 "is_active": user.is_active,
                 "is_superuser": user.is_superuser,
                 "email": user.email,
-                "corporate": user.corporate
             }
             
         return self.get_anonymous_user()
